@@ -127,6 +127,13 @@ while true; do
 
                     git init
                     git add .
+
+                    # Verificare daca exista fisiere pentru commit
+                    if git diff --cached --quiet; then
+                        echo "Nu exista fisiere pentru commit. Asigurati-va ca aveti fisiere in directorul specificat."
+                        continue
+                    fi
+
                     git commit -m "$commit_message"
                     git branch -M main
                     git push -u origin main
