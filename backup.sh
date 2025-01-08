@@ -128,24 +128,20 @@ while true; do
                     git init
                     git add .
 
-                    # Verificare modificari necomise
-                    if ! git diff-index --quiet HEAD --; then
-                        echo "Exista modificari necomise. Le comit automat..."
-                        git commit -am "Salvare automata a modificarilor inainte de pull"
+                    # Verificare daca exista fisiere pentru commit
+                    if git diff --cached --quiet && git diff-index --quiet HEAD --; then
+                        echo "Nu exista fisiere noi sau modificari pentru commit."
+                        continue
                     fi
+
+                    echo "Comiterea modificarilor..."
+                    git commit -m "$commit_message"
 
                     # Sincronizare cu repository-ul remote
                     echo "Sincronizare cu repository-ul remote..."
                     git pull origin main --rebase || { echo "Eroare la sincronizare. Verificati conflictele."; continue; }
 
-                    # Verificare daca exista fisiere pentru commit
-                    if git diff --cached --quiet; then
-                        echo "Nu exista fisiere pentru commit. Asigurati-va ca aveti fisiere in directorul specificat."
-                        continue
-                    fi
-
-                    git commit -m "$commit_message"
-                    git branch -M main
+                    # Push modificarile
                     git push -u origin main
                     echo "Fisierele au fost urcate in repository-ul GitHub: $REPO_URL."
                     ;;
