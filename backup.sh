@@ -3,7 +3,7 @@
 # Variabile de configurare implicite
 DEBUG_MODE=0
 LOG_FILE="backup.log"
-REPO_URL="https://github.com/AndreiKing1/Advanced_Backup.git"
+REPO_URL="git@github.com:AndreiKing1/Advanced_Backup.git"
 
 # Procesarea argumentelor din linia de comanda cu getopt
 PARSED=$(getopt --options h,u --longoptions help,usage,debug: -- "$@")
