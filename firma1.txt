@@ -1,0 +1,12 @@
+BMW X5 2010 V8 150000 vanzare diesel
+BMW X3 2012 V6 95000 inchiriere diesel
+Audi A4 2008 V6 200000 vanzare diesel
+Audi Q7 2015 V12 80000 inchiriere diesel
+Volkswagen Golf 2006 V4 120000 vanzare benzina
+Honda CR-V 2017 V6 60000 inchiriere benzina
+Kia Sportage 2019 V6 40000 vanzare diesel
+Kia Rio 2015 V4 90000 inchiriere diesel
+Mazda CX-5 2014 V4 105000 vanzare benzina
+Mazda MX-5 2019 V4 20000 inchiriere diesel
+
+
